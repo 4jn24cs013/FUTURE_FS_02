@@ -1,0 +1,356 @@
+/* ===== Global styles ===== */
+:root {
+    --navy: #172554;
+    --blue: #4f46e5;
+    --blue-light: #eef2ff;
+    --background: #f5f7fc;
+    --white: #ffffff;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --green: #15803d;
+    --orange: #c2410c;
+    --purple: #7e22ce;
+    --shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(120deg, #172554, #312e81);
+    color: white;
+    padding: 30px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: #c7d2fe;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+/* ===== Main layout ===== */
+main {
+    width: min(1200px, 92%);
+    margin: 32px auto 60px;
+}
+
+section {
+    background: var(--white);
+    padding: 28px;
+    margin-bottom: 26px;
+    border: 1px solid #edf0f6;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    margin-bottom: 22px;
+}
+
+/* ===== Dashboard ===== */
+.dashboard-section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.dashboard-section h2 {
+    margin-bottom: 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+}
+
+.stat-card:nth-child(1) {
+    border-top: 4px solid #4f46e5;
+}
+
+.stat-card:nth-child(2) {
+    border-top: 4px solid #f59e0b;
+}
+
+.stat-card:nth-child(3) {
+    border-top: 4px solid #0ea5e9;
+}
+
+.stat-card:nth-child(4) {
+    border-top: 4px solid #22c55e;
+}
+
+.stat-card:nth-child(5) {
+    border-top: 4px solid #a855f7;
+}
+
+/* ===== Add lead form ===== */
+.form-section h2::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 23px;
+    background: var(--blue);
+    border-radius: 5px;
+    margin-right: 11px;
+    vertical-align: -4px;
+}
+
+#leadForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: #fbfcff;
+    border: 1px solid #dce3ef;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    background: white;
+}
+
+textarea {
+    min-height: 105px;
+    resize: vertical;
+    grid-column: 1 / -1;
+}
+
+#leadForm button {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+/* ===== Buttons ===== */
+button {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 17px;
+    background: var(--blue);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 2px;
+}
+
+/* ===== Lead list ===== */
+#leadsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.lead-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: white;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.lead-card:hover {
+    border-color: #c7d2fe;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+.lead-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.lead-card p {
+    font-size: 14px;
+    color: #475569;
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.lead-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.lead-card select {
+    margin-bottom: 12px;
+}
+
+.lead-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.lead-actions button {
+    padding: 9px 12px;
+    font-size: 13px;
+}
+
+.lead-actions button:last-child {
+    background: #dc2626;
+}
+
+.lead-actions button:last-child:hover {
+    background: #b91c1c;
+}
+
+/* ===== Responsive design ===== */
+@media (max-width: 1000px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #leadsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 24px 5%;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 22px;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 17px 14px;
+    }
+
+    #leadForm {
+        grid-template-columns: 1fr;
+    }
+
+    #leadForm textarea,
+    #leadForm button {
+        grid-column: auto;
+    }
+
+    #leadForm button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Search and filter */
+.lead-filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.lead-filters input,
+.lead-filters select {
+    background: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .lead-filters {
+        grid-template-columns: 1fr;
+    }
+}
