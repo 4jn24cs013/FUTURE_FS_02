@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini CRM - Lead Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mini CRM</h1>
+        <p>Client Lead Management System</p>
+    </header>
+
+    <main>
+
+        <!-- Dashboard Overview -->
+        <section class="dashboard-section">
+            <h2>Dashboard Overview</h2>
+
+            <div class="dashboard-grid">
+
+                <div class="stat-card">
+                    <h3>Total Leads</h3>
+                    <p id="totalLeads">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>New Leads</h3>
+                    <p id="newLeads">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Contacted</h3>
+                    <p id="contactedLeads">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Converted</h3>
+                    <p id="convertedLeads">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Conversion Rate</h3>
+                    <p id="conversionRate">0%</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Add New Lead Form -->
+        <section class="form-section">
+            <h2>Add New Lead</h2>
+
+            <form id="leadForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Phone Number"
+                >
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Company"
+                >
+
+                <select id="source">
+                    <option value="">Select Lead Source</option>
+                    <option value="Website">Website</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <textarea
+                    id="message"
+                    placeholder="Message"
+                ></textarea>
+
+                <button type="submit">Add Lead</button>
+
+            </form>
+        </section>
+
+        <!-- Leads List -->
+ <section class="leads-section">
+    <h2>Manage Leads</h2>
+
+    <div class="lead-filters">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name, email, or company..."
+        >
+
+        <select id="statusFilter">
+            <option value="All">All Statuses</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Converted">Converted</option>
+        </select>
+    </div>
+
+    <div id="leadsContainer">
+        <p>Loading leads...</p>
+    </div>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
